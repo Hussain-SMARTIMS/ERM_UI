@@ -1,0 +1,44 @@
+<c-row ngPreserveWhitespaces>
+    
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>Add Products</strong> 
+          <!-- <small>Basic example</small> -->
+          <button cButton color="info" class="btnalign" (click)="addNewRow()">Add New</button>
+        </c-card-header>
+        <c-card-body>
+         
+          
+            <table cTable>
+              <thead>
+              <tr>
+                <th scope="col" >Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Value</th>
+                <th scope="col">Image</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let product of productInfo;">
+                <th scope="row">{{product.id}}</th>
+                <td><input type="text" class="tablecloumntext_align" [(ngModel)]="product.name" /></td>
+                <td><input type="text"  class="tablecloumntext_align" [(ngModel)]="product.description" /></td>
+                <td><input type="text"  class="tablecloumntext_align" [(ngModel)]="product.Qty" /></td>
+                <td><input type="text"  class="tablecloumntext_align" [(ngModel)]="product.value" /></td>
+                <td><div>
+                <input cFormControl id="formFileSm" [(ngModel)]="product.image" (change)="uploadImage($event)" sizing="sm" type="file" />
+                </div>
+                 </td>
+                
+              </tr>
+              </tbody>
+            </table>
+         
+        </c-card-body>
+
+      </c-card>
+    </c-col>
+</c-row>

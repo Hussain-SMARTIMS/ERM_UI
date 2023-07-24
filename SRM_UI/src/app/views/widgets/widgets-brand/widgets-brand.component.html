@@ -1,0 +1,98 @@
+<c-row>
+  <c-col *ngFor="let widget of brandData| angularPaginator
+  : { itemsPerPage: this.itemsPerPage, currentPage: currentPage }; index as i" sm="6" xl="3">
+    <c-widget-stat-d
+      [color]="widget.color ?? ''"
+      [style]="widget.capBg ?? null"
+      [values]="widget.values"
+      class="mb-4"
+     
+    >
+    <img [src]="widget.icon" cIcon class=" text-white" height="100">
+      <ng-container *ngIf="withCharts">
+        <c-chart
+          #chart="cChart"
+          [data]="widget.data"
+          [options]="chartOptions"
+          class="position-absolute w-100 h-100"
+          type="line"
+        >{{ chart.id }}</c-chart
+        >
+      </ng-container>
+    </c-widget-stat-d>
+  </c-col>
+  <nav
+          angularPaginator
+          [forceEllipses]="true"
+          [rotate]="true"
+          [maxSize]="5"
+          aria-label="Pagination Component"
+          #paginator="angularPaginator"
+          (pageChange)="currentPage = $event"
+        >
+          <ng-container *ngIf="paginator.pages['length'] !== 0">
+            <ul class="pagination pagination-sm">
+              <!-- direction link -->
+              <li
+                class="page-item"
+                [ngClass]="{
+                  disabled: paginator.currentPage === paginator.firstPage
+                }"
+              >
+                <a class="page-link" (click)="paginator.toPreviousPage()">
+                  <span aria-hidden="true">Previous</span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+              </li>
+
+              <!-- pagination array -->
+              <li
+                class="page-item"
+                *ngFor="let page of paginator.pages"
+                [ngClass]="{ active: page['active'] }"
+              >
+                <a
+                  class="page-link"
+                  (click)="
+                    !page['active'] && paginator.setCurrentPage(page['number'])
+                  "
+                >
+                  {{ page['text'] }}
+                  <span class="visually-hidden" *ngIf="!page['active']"
+                    >Page{{ page['text'] }}</span
+                  >
+                  <span class="visually-hidden" *ngIf="page['active']"
+                    >You are on page {{ page['text'] }}</span
+                  >
+                </a>
+              </li>
+
+              <!-- direction link -->
+              <li
+                class="page-item"
+                [ngClass]="{
+                  disabled: paginator.currentPage === paginator.lastPage
+                }"
+              >
+                <a class="page-link" (click)="paginator.toNextPage()">
+                  <span aria-hidden="true">Next</span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </li>
+            </ul>
+          </ng-container>
+        </nav>
+  
+</c-row>
+
+
+
+
+<!-- <div class="card" style="width: 18rem;" >
+  <img [src]="widget.icon" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> -->

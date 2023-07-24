@@ -1,0 +1,142 @@
+<c-row ngPreserveWhitespaces>
+    
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>Add/Update Employee</strong>
+        </c-card-header>
+
+        <c-card-body>
+            <c-row>
+            <c-col xs="4">
+            <div [cFormFloating]="true" xs="3" class="mb-3">
+              <input cFormControl id="floatingInput" class="empupdateBorder" style="height: calc(3rem + 7px);" placeholder="name@example.com" type="email" />
+              <label cLabel for="floatingInput" style="font-size: 13px; padding: 0.75rem 0.75rem;">Employee Id</label>
+            </div>
+        </c-col>
+        <c-col xs="4">
+            <div [cFormFloating]="true" xs="3" class="mb-3">
+              <input cFormControl id="floatingInput" class="empupdateBorder" style="height: calc(3rem + 7px);" placeholder="name@example.com" type="email" />
+              <label cLabel for="floatingInput" style="font-size: 13px; padding: 0.75rem 0.75rem;">Email address</label>
+            </div>
+        </c-col>
+        <c-col xs="4">
+          <div cFormFloating class="mb-3">
+            <select aria-label="Floating label select example"  class="empupdateBorder" cSelect id="floatingSelect" style="height: calc(3rem + 7px);font-size: 14px;">
+              <option >Select Gender</option>
+              <option  value="1" (click)="genderSelect('Male')">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Other</option>
+            </select>
+            <label cLabel for="floatingSelect" style="font-size: 13px; padding: 0.75rem 0.75rem;">Gender</label>
+          </div>
+            
+        </c-col>
+        <c-col xs="4">
+            <div [cFormFloating]="true" xs="3" class="mb-3">
+              <input cFormControl id="floatingInput" class="empupdateBorder" style="height: calc(3rem + 7px);" placeholder="name@example.com" type="email" />
+              <label cLabel for="floatingInput" style="font-size: 13px; padding: 0.75rem 0.75rem;">First Name</label>
+            </div>
+        </c-col>
+        <c-col xs="4">
+            <div [cFormFloating]="true" xs="3" class="mb-3">
+              <input cFormControl id="floatingInput" class="empupdateBorder" style="height: calc(3rem + 7px);" placeholder="name@example.com" type="email" />
+              <label cLabel for="floatingInput" style="font-size: 13px; padding: 0.75rem 0.75rem;">Middle Name</label>
+            </div>
+        </c-col>
+        <c-col xs="4">
+            <div [cFormFloating]="true" xs="3" class="mb-3">
+              <input cFormControl id="floatingInput" class="empupdateBorder" style="height: calc(3rem + 7px);" placeholder="name@example.com" type="email" />
+              <label cLabel for="floatingInput" style="font-size: 13px; padding: 0.75rem 0.75rem;">Last Name</label>
+            </div>
+        </c-col>
+        
+        <c-col xs="4">
+            <div cFormFloating class="mb-3">
+                <select aria-label="Floating label select example" class="empupdateBorder" cSelect id="floatingSelect" style="height: calc(3rem + 7px);font-size: 14px;">
+                  <option> Select Department</option>
+                  <option value="1">Insurance</option>
+                  <option value="2">EAM</option>
+                  <option value="3"> HR</option>
+                  <option value="4">IT </option>
+                  <option value="5">Finance</option>
+                  <option value="6"> IMM</option>
+                  <option value="7">Management</option>
+                  <option value="8">Sales</option>
+                  <option value="9">Marketing</option>
+                </select>
+                <label cLabel for="floatingSelect" style="font-size: 13px; padding: 0.75rem 0.75rem;">Department</label>
+              </div>
+        </c-col>
+        <c-col xs="4">
+            <div cFormFloating class="mb-3">
+                <select aria-label="Floating label select example" class="empupdateBorder" cSelect id="floatingSelect" style="height: calc(3rem + 7px);font-size: 14px;">
+                  <option>Select Band</option>
+                  <option value="1">Trainee Engineer</option>
+                  <option value="2">Associate Engineer - |</option>
+                  <option value="3">Associate Engineer - ||</option>
+                  <option value="5">Software Engineer- |</option>
+                  <option value="6">Software Engineer- ||</option>
+                  <option value="3">Software Engineer- |||</option>
+                  <option value="4">Senior Software Engineer- |</option>
+                  <option value="5">Software Engineer- ||</option>
+                  <option value="6">Software Engineer- |||</option>
+                  <option value="4">Team Lead- |</option>
+                  <option value="5">Team Lead- ||</option>
+                  <option value="6">Team Lead- |||</option>
+                  <option value="4">General Manager</option>
+                  <option value="5">Product Manager</option>
+                  <option value="6">Solution Architect</option>
+                </select>
+                <label cLabel for="floatingSelect" style="font-size: 13px; padding: 0.75rem 0.75rem;">Band</label>
+              </div>
+        </c-col>
+        <c-col xs="4">
+            <div cFormFloating class="mb-3">
+                <select aria-label="Floating label select example" class="empupdateBorder" cSelect id="floatingSelect" style="height: calc(3rem + 7px);font-size: 14px;">
+                  <option>Select Role</option>
+                  <option value="1">Admin</option>
+                  <option value="2">Employee</option>
+                </select>
+                <label cLabel for="floatingSelect" style="font-size: 13px; padding: 0.75rem 0.75rem;">Role</label>
+              </div>
+        </c-col>
+        <c-col xs="8">
+            <div cFormFloating xs="3" class="mb-3">
+                <textarea [ngStyle]="{ 'height.px': 100 }" class="empupdateBorder"
+                          cFormControl
+                          id="floatingTextarea2"
+                          placeholder="Leave a comment here"
+                ></textarea>
+                <label cLabel for="floatingTextarea2" style="font-size: 13px; padding: 0.75rem 0.75rem;">Address</label>
+              </div>
+            <!-- <div [cFormFloating]="true" xs="3" class="mb-3">
+              <input cFormControl id="floatingInput" style="height: calc(3rem + 7px);" placeholder="name@example.com" type="email" />
+              <label cLabel for="floatingInput" style="font-size: 13px; padding: 0.75rem 0.75rem;">Employee Id</label>
+            </div> -->
+        <!-- </c-col>
+        <c-col xs="4"> -->
+            <!-- <div [cFormFloating]="true" xs="3" class="mb-3">
+              <input cFormControl id="floatingInput" style="height: calc(3rem + 7px);" placeholder="name@example.com" type="email" />
+              <label cLabel for="floatingInput" style="font-size: 13px; padding: 0.75rem 0.75rem;">Email address</label>
+            </div> -->
+        </c-col>
+        <c-col xs="4">
+            <div cFormFloating class="mb-3">
+                <select aria-label="Floating label select example" class="empupdateBorder" cSelect id="floatingSelect" style="height: calc(3rem + 7px);font-size: 14px;">
+                  <option >Select Status</option>
+                  <option value="1">Active</option>
+                  <option value="2">InActive</option>
+                </select>
+                <label cLabel for="floatingSelect" style="font-size: 13px; padding: 0.75rem 0.75rem;">Status</label>
+              </div>
+        </c-col>
+
+        
+        </c-row>
+         </c-card-body>
+      </c-card>
+    </c-col> 
+  </c-row>
+  
+  
